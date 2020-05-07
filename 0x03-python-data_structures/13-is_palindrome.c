@@ -2,22 +2,17 @@
 #include <stdlib.h>
 #include "lists.h"
 
-listint_t *backwards(listint_t **head)
+int check(listint_t **left, listint_t *right)
 {
-	listint_t *tmp = NULL;
-	listint_t *next;
-
-	if (*head == NULL)
-		return (NULL);
-	while (*head != NULL)
+	if (right == NULL)
+		return (1);
+	check(left, right->next);
+	if ((*left)->n == right->n)
 	{
-		next = (*head)->next;
-		(*head)->next = tmp;
-		tmp = *head;
-		*head = next;
+		(*left) = (*left)->next;
+		return (1);
 	}
-	*head = tmp;
-	return (*head);
+	return (0);
 }
 
 /**
@@ -27,33 +22,7 @@ listint_t *backwards(listint_t **head)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *fast = *head, *slow = *head, *half, *tmp;
-
-
-	if (head == NULL)
-		return (0);
-	if (*head == NULL || (*head)->next == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
-	while (fast != NULL && fast->next != NULL)
-	{
-		fast = fast->next->next;
-		slow = slow->next;
-	}
-	if (fast == NULL)
-		half = slow;
-	else
-		half = slow->next;
-	half = backwards(&half);
-	tmp = *head;
-	while (half != NULL)
-	{
-		if (tmp->n == half->n)
-		{
-			tmp = tmp->next;
-			half = half->next;
-		}
-		else
-			return (0);
-	}
-	return (1);
+	return (check(head, *head));
 }
