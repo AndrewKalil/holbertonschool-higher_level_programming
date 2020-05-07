@@ -6,8 +6,7 @@ int check(listint_t **left, listint_t *right)
 {
 	if (right == NULL)
 		return (1);
-	check(left, right->next);
-	if ((*left)->n == right->n)
+	if (check(left, right->next) && (*left)->n == right->n)
 	{
 		(*left) = (*left)->next;
 		return (1);
