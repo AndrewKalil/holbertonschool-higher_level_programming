@@ -11,8 +11,20 @@ class Square:
         Keyword Arguments:
             size {int} -- size of the square (default: {0})
             position {tuple} -- position of the square (default: {(0,0)})
-
+        Raises:
+            TypeError: Raises error if position is not a positive value
+            TypeError: Raises error if position is not a positive value
+            TypeError: Raises error if position is not a positive value
+            TypeError: Raises error if position is not a positive value
         """
+        if len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(position) is not tuple:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif position[0] < 0 or position[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(position[0]) is not int and type(position[0]) is not int:
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__size = size
         self.__position = position
 
@@ -70,7 +82,7 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif type(value[0]) is not int or type(value[0]) is not int:
+        elif type(value[0]) is not int and type(value[0]) is not int:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
