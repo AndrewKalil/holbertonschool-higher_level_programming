@@ -1,6 +1,6 @@
 # holbertonschool-higher_level_programming :computer:
 
-## 0x05-python-exceptions :earth_asia:
+## 0x06-python-classes :earth_asia:
 ### files :page_facing_up:
  * 0-square.py
  * 1-square.py
