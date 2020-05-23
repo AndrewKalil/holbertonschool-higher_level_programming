@@ -1,14 +1,10 @@
-===================
-TESTS FOR TASK 0
-===================
+======================
+TEST CASES FOR TASK 0
+======================
 
 =========================================================
-
 >>> add_integer = __import__('0-add_integer').add_integer
-
 =========================================================
-
-=====EDGE CASES=====
 
 >>> print(add_integer(1, 2))
 3
@@ -37,6 +33,11 @@ add_integer() missing 1 required positional argument: 'a'
 Traceback (most recent call last):
 	  ...
 OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+	  ...
+ValueError: cannot convert float NaN to integer
 
 >>> add_integer(--2++)
 Traceback (most recent call last):
