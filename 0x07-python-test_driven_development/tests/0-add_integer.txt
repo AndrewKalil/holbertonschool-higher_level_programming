@@ -2,9 +2,7 @@
 TEST CASES FOR TASK 0
 ======================
 
-=========================================================
 >>> add_integer = __import__('0-add_integer').add_integer
-=========================================================
 
 >>> print(add_integer(1, 2))
 3
@@ -43,6 +41,11 @@ ValueError: cannot convert float NaN to integer
 Traceback (most recent call last):
 	  ...
 SyntaxError: invalid syntax
+
+>>> add_integer(var)
+Traceback (most recent call last):
+	  ...
+NameError: name 'var' is not defined
 
 >>> try:
 ...     print(add_integer(4, "School"))
