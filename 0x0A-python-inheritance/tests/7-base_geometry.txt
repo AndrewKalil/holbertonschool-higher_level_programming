@@ -98,3 +98,20 @@ TypeError: my_int must be an integer
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
 
+===========================Docstrings============================================
+
+>>> m_doc = __import__('7-base_geometry').__doc__
+>>> len(m_doc) > 1
+True
+
+>>> c_doc = __import__('7-base_geometry').BaseGeometry.__doc__
+>>> len(c_doc) > 1
+True
+
+>>> m_doc = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+>>> len(m_doc) > 1
+True
+
+>>> m_doc = __import__('7-base_geometry').BaseGeometry.area.__doc__
+>>> len(m_doc) > 1
+True
