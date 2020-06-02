@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""set attribute"""
+
+
 def add_attribute(cls, field, name):
     """add a new attribute
 
