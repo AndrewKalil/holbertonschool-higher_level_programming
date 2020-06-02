@@ -34,6 +34,39 @@ TEST CASES FOR TASK 1
 >>> print(my_list)
 [1]
 
+========================================== No arguements==================================================
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList()
+
+>>> print(my_list)
+[]
+
+========================================== Already sorted ================================================
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList()
+
+>>> my_list.append(1)
+
+>>> my_list.append(4)
+
+>>> my_list.append(2)
+
+>>> my_list.append(3)
+
+>>> my_list.append(-1)
+
+>>> my_list.sort()
+
+>>> print(my_list)
+[-1, 1, 2, 3, 4]
+
+>>> my_list.print_sorted()
+[-1, 1, 2, 3, 4]
+
 ========================================== Trying with negatives =========================================
 
 >>> my_list = MyList()
