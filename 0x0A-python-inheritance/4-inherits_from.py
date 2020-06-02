@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""check if inherited"""
+
+
 def inherits_from(obj, a_class):
     """check if instances are the same or if the obj was inherited from class
 

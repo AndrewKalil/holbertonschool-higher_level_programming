@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""isinstance"""
+
+
 def is_kind_of_class(obj, a_class):
     """check if instances are the same or if the obj was inherited from class
 
