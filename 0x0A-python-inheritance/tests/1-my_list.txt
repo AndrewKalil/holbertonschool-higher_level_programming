@@ -94,6 +94,11 @@ TEST CASES FOR TASK 1
 >>> print(my_list)
 [-3, -11, 0, 6, 1, 9, -17]
 
+>>> my_list.print_sorted(11)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+
 ============================================Using other methods============================================
 
 >>> my_list = MyList()
