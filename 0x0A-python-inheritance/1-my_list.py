@@ -9,4 +9,6 @@ class MyList(list):
         list {list} -- object "list"
     """
     def print_sorted(self):
+        """prints a list sorted
+        """
         print(sorted(self))
