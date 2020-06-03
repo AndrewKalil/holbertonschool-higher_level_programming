@@ -26,7 +26,7 @@ class Student:
         Returns:
             dict -- a new dictioary with wanted keys and values
         """
-        if attrs == None:
+        if attrs is None:
             return self.__dict__
         dic = {}
         for key, value in self.__dict__.items():
