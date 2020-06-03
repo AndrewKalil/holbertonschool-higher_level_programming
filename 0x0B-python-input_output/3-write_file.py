@@ -3,14 +3,14 @@
 
 
 def write_file(filename="", text=""):
-    """[summary]
+    """writes to a file
 
     Keyword Arguments:
-        filename {str} -- [description] (default: {""})
-        text {str} -- [description] (default: {""})
+        filename {str} -- name of file (default: {""})
+        text {str} -- text beingwritten (default: {""})
 
     Returns:
-        [type] -- [description]
+        int -- number of charaters
     """
     with open(filename, mode="w", encoding="utf-8") as fd:
         fd.write(text)
