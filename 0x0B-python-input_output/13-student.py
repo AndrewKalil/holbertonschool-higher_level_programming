@@ -1,42 +1,44 @@
 #!/usr/bin/python3
-import os
-import sys
-
-Student = __import__('13-student').Student
-read_file = __import__('0-read_file').read_file
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
-
-path = sys.argv[1]
-
-if os.path.exists(path):
-    os.remove(path)
-
-student_1 = Student("John", "Doe", 23)
-j_student_1 = student_1.to_json()
-print("Initial student:")
-print(student_1)
-print(type(student_1))
-print(type(j_student_1))
-print("{} {} {}".format(student_1.first_name, student_1.last_name, student_1.age))
+"""student to JSON"""
 
 
-save_to_json_file(j_student_1, path)
-read_file(path)
-print("\nSaved to disk")
+class Student:
+    """class Student
+    """
+    def __init__(self, first_name, last_name, age):
+        """Instantiation of attributes for student
 
+        Arguments:
+            first_name {str} -- first name of student
+            last_name {str} -- second name of student
+            age {int} -- age of student
+        """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-print("Fake student:")
-new_student_1 = Student("Fake", "Fake", 89)
-print(new_student_1)
-print(type(new_student_1))
-print("{} {} {}".format(new_student_1.first_name, new_student_1.last_name, new_student_1.age))
+    def to_json(self, attrs=None):
+        """prints certain keys and values
 
+        Keyword Arguments:
+            attrs {str} -- specified attribute (default: {None})
 
-print("Load dictionary from file:")
-new_j_student_1 = load_from_json_file(path)
+        Returns:
+            dict -- a new dictioary with wanted keys and values
+        """
+        if attrs == None:
+            return self.__dict__
+        dic = {}
+        for key, value in self.__dict__.items():
+            if key in attrs:
+                dic[key] = value
+        return dic
 
-new_student_1.reload_from_json(j_student_1)
-print(new_student_1)
-print(type(new_student_1))
-print("{} {} {}".format(new_student_1.first_name, new_student_1.last_name, new_student_1.age))
+    def reload_from_json(self, json):
+        """reloads values of instance
+
+        Arguments:
+            json {dict} -- dictionary with students info
+        """
+        for key, value in json.items():
+            setattr(self, key, value)
