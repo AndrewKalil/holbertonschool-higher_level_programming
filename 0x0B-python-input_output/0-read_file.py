@@ -8,5 +8,6 @@ def read_file(filename=""):
     Keyword Arguments:
         filename {str} -- name of file (default: {""})
     """
-    with open(filename, encoding="utf-8") as myFile:
-        print(myFile.read())
+    with open(filename, encoding="utf-8") as fd:
+        for i in fd:
+            print(i, end="")

@@ -11,6 +11,6 @@ def read_lines(filename="", nb_lines=0):
     """
     with open(filename, encoding="utf-8") as fd:
         if nb_lines <= 0:
-            print(fd.read())
+            print(fd.read(), end="")
         for i in range(nb_lines):
             print(fd.readline(), end="")
