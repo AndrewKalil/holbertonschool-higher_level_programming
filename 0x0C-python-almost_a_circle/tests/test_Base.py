@@ -6,6 +6,7 @@ from models.square import Square
 import unittest
 import json
 
+
 class BaseTest(unittest.TestCase):
     """tests for base class"""
 
@@ -124,4 +125,3 @@ class BaseTest(unittest.TestCase):
         Rectangle.save_to_file(ls)
         ls_o = Rectangle.load_from_file()
         self.assertNotEqual(ls, ls_o)
-

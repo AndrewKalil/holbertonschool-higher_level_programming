@@ -5,6 +5,7 @@ from io import StringIO
 import unittest
 import sys
 
+
 class BaseTest(unittest.TestCase):
     """tests for base class"""
 
@@ -57,7 +58,6 @@ class BaseTest(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             test.update(1, 5, 4, 1, "5")
-
 
     def test_possible_ValueError_rasies(self):
         """ensures all possible raises are covered for creating a rectangle"""
