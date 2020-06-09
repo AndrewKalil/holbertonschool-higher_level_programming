@@ -12,3 +12,10 @@ if __name__ == "__main__":
 
     r3 = Rectangle(10, 2, 0, 0, 12)
     print(r3.id)
+
+    r4 = Rectangle(10, 2, None, 3, 12)
+    print(r4.id)
+    print(r4.width)
+    print(r4.height)
+    print(r4.x)
+    print(r4.y)
