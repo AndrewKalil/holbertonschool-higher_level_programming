@@ -161,3 +161,13 @@ class BaseTest(unittest.TestCase):
     def test_docstrings(self):
         """checks if Square has a docstring"""
         self.assertEqual(len(Square.__doc__) > 0, True)
+        self.assertTrue(hasattr(Square, "__init__"))
+        self.assertTrue(Square.__init__.__doc__)
+        self.assertTrue(hasattr(Square, "size"))
+        self.assertTrue(Square.size.__doc__)
+        self.assertTrue(hasattr(Square, "__str__"))
+        self.assertTrue(Square.__str__.__doc__)
+        self.assertTrue(hasattr(Square, "update"))
+        self.assertTrue(Square.update.__doc__)
+        self.assertTrue(hasattr(Square, "to_dictionary"))
+        self.assertTrue(Square.to_dictionary.__doc__)

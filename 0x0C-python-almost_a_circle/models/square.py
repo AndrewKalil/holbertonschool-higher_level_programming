@@ -33,7 +33,11 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """propetry for size"""
+        """size of squre
+
+        Returns:
+            [type]: [description]
+        """        """propetry for size"""
         return self.width
 
     @size.setter
