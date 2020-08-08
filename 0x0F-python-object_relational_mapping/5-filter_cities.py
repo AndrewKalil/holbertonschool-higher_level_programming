@@ -15,11 +15,12 @@ if __name__ == "__main__":
                 WHERE states.name = %s\
                 ORDER BY cities.id ASC", (argv[4],))
     rows = cur.fetchall()
-    for i in range(len(rows)):
-        string = str(rows[i])
-        if i < (len(rows)-1):
-            print("{}, ".format(string[2:-3]), end="")
-        else:
-            print("{}".format(string[2:-3]))
+    if rows:
+        for i in range(len(rows)):
+            string = str(rows[i])
+            if i < (len(rows)-1):
+                print("{}, ".format(string[2:-3]), end="")
+            else:
+                print("{}".format(string[2:-3]))
     cur.close()
     db.close()
