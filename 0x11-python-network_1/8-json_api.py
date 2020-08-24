@@ -7,9 +7,8 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    if not sys.argv:
-        q = ""
-    elif len(sys.argv) > 1:
+    q = ""
+    if len(sys.argv) > 1:
         q = sys.argv[1]
     req = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
