@@ -1,8 +1,6 @@
 #!/usr/bin/node
-// prints value of arguements
-
-if (process.argv.length === 2) {
-  console.log('No argument');
-} else {
-  console.log(process.argv[2]);
-}
+if (process.argv[2] === undefined) {
+	console.log('No argument');
+  } else {
+	console.log(process.argv[2]);
+  }
